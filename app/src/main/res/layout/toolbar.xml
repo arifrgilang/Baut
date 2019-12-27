@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * Created by Arif R. Gilang on 12/27/19 7:13 AM
+  ~  * Copyright (c) 2019 . All rights reserved.
+  ~  * Last modified 12/27/19 7:13 AM
+  ~  */
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondary_two"
+        app:subtitleTextColor="@color/md_white_1000"
+        app:titleTextColor="@color/md_white_1000" />
+
+</LinearLayout>
