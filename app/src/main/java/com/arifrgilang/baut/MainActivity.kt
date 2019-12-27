@@ -6,7 +6,7 @@
  *
  */
 
-package com.arifrgilang.baut.data
+package com.arifrgilang.baut
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

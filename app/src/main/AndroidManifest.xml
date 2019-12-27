@@ -17,7 +17,7 @@
         android:usesCleartextTraffic="true"
         tools:ignore="ExtraText,GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".data.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
