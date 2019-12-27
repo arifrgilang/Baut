@@ -3,6 +3,8 @@ Stands for 'BA'se 'UT'ility. Base project file needed to make MVVM project with 
 
 **Check first 8 commit**
 
+This app will show a simplte retrieve API using Retrofit. The data stored inside Room Database for 30 minutes until the user force refresh using SwipeRefreshLayout. More detail TBD
+
 
 ## Stack
 - AndroidViewModel
