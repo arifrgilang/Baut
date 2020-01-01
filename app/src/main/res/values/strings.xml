@@ -1,3 +1,4 @@
 <resources>
 
+    <string name="tvError">Check your internet connection</string>
 </resources>

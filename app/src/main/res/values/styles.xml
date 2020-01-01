@@ -15,4 +15,14 @@
 
     <!-- Styling Here -->
 
+    <style name="card_character">
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:foreground">@color/translucent_black</item>
+    </style>
+
+    <style name="text_character">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+    </style>
 </resources>

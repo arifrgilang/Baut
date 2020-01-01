@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#c24f7e</color>
-    <color name="colorPrimaryDark">#A83B68</color>
-    <color name="colorAccent">#DC7BA2</color>
+    <color name="colorPrimary">#00BCD4</color>
+    <color name="colorPrimaryDark">#0097A7</color>
+    <color name="colorAccent">#8BC34A</color>
 
     <!--reds-->
     <color name="md_red_50">#FFEBEE</color>
@@ -305,6 +305,6 @@
     <color name="secondary_five">#ffabce</color>
 
     <!-- Overlay color -->
-    <color name="translucent_black">#80000000</color>
+    <color name="translucent_black">#40000000</color>
 
 </resources>

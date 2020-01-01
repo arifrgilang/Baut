@@ -16,10 +16,10 @@ import com.arifrgilang.baut.data.model.CharacterModel
 @Dao
 interface CharacterModelDao {
     @Insert
-    suspend fun insert(vararg character: CharacterModel)
+    suspend fun insertAll(characters: List<CharacterModel>)
 
     @Query("SELECT * FROM charactermodel")
-    suspend fun getAllCharacter()
+    suspend fun getAllCharacter() : List<CharacterModel>
 
     @Query("DELETE FROM charactermodel")
     suspend fun deleteAllCharacter()

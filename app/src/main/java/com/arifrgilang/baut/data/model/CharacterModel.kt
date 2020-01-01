@@ -11,6 +11,7 @@ package com.arifrgilang.baut.data.model
 import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 // THIS IS EXAMPLE OF MODEL FOR ROOM USAGE, MODEL WITH SUB MODEL INSIDE
@@ -27,6 +28,10 @@ data class CharacterModel(
     @ColumnInfo(name = "status")
     @SerializedName("status")
     val status: String?,
+
+    @ColumnInfo(name = "species")
+    @SerializedName("species")
+    val species: String?,
 
     @ColumnInfo(name = "type")
     @SerializedName("type")
@@ -48,9 +53,9 @@ data class CharacterModel(
     @SerializedName("image")
     val image: String?,
 
-    @ColumnInfo(name = "episode")
-    @SerializedName("episode")
-    val episode: List<String>?,
+//    @ColumnInfo(name = "episode")
+//    @SerializedName("episode")
+//    val episode: List<String>?,
 
     @ColumnInfo(name = "url")
     @SerializedName("url")
@@ -58,7 +63,10 @@ data class CharacterModel(
 
     @ColumnInfo(name = "created")
     @SerializedName("created")
-    val created: String?
+    val created: String?,
+
+    @PrimaryKey(autoGenerate = true)
+    var uuid: Int = 0
 )
 
 data class OriginModel (
