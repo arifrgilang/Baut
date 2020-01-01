@@ -1,11 +1,10 @@
 # Baut
 Stands for 'BA'se 'UT'ility. Base project file needed to make MVVM project with Kotlin and Coroutines. Reference based on company where I work as an intern.
 
-**Check first 8 commit in master branch to see initialization of Base Utility.**
-**Check other branch for TBD**
-
-This app will show a simple retrieve API using Retrofit. The data stored inside Room Database for 30 minutes until the user force refresh using SwipeRefreshLayout. More detail TBD
-
+## Branch
+- `master` - Base Utility (first 8 commit)
+- `rickandmorty-api` - Simple implementation using MVVM App Architecture
+  - The app retrieve a list of Character from `Remote API` (https://rickandmortyapi.com/). Retrieved data is stored in `RoomDB` for 5 minutes so if user is closing and re-open the app within 5 minutes, the data will be fetched from `RoomDB`, not from `Remote API`. However the user can force load from Remote API by triggering `onRefresh()`(sliding down the view) in SwipeRefreshLayout. 
 
 ## Stack
 - AndroidViewModel
@@ -13,7 +12,7 @@ This app will show a simple retrieve API using Retrofit. The data stored inside 
 - Room
 - RxJava
 - Coroutines
-- Retrofit + OkHttp
+- Retrofit
 - Data Binding
 - Material Design
 - Glide
@@ -21,8 +20,3 @@ This app will show a simple retrieve API using Retrofit. The data stored inside 
 - Espresso
 - Mockito
 
-## File Structure
-
-TBD
-
-##
