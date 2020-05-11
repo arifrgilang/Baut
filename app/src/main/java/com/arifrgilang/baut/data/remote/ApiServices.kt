@@ -8,33 +8,17 @@
 
 package com.arifrgilang.baut.data.remote
 
+import com.arifrgilang.baut.data.model.ArrayResponse
+import com.arifrgilang.baut.data.model.CharacterModel
 import io.reactivex.Single
 import retrofit2.http.*
 
 interface ApiServices {
+    @GET("character")
+    fun getAllCharacter() : Single<ArrayResponse<CharacterModel>>
 
-//    @GET("/user/exist")
-//    fun isUserExist(
-//        @Query("phone_number") phoneNumber : String
-//    ) : Single<ResponseObject<UserExistModel>>
-//
-//    @POST("/user/register")
-//    @FormUrlEncoded
-//    fun registerUser(
-//        @Field("idToken") idToken: String,
-//        @Field("name") name: String,
-//        @Field("id_job") idJob: Int,
-//        @Field("id_user_city") idUserCity: Int
-//    ) : Single<ResponseObject<AccessTokenModel>>
-//
-//    @POST("/user/register")
-//    @FormUrlEncoded
-//    fun loginUser(
-//        @Field("idToken") idToken: String
-//    ) : Single<ResponseObject<AccessTokenModel>>
-//
-//    @GET("user/profile/{id}")
-//    fun getProfile(
-//        @Path("id") id: Int
-//    ): Single<ResponseObject<UserProfileModel>>
+    @GET("character/{id}")
+    fun getCharacter(
+        @Path("id") id: Int
+    ): Single<CharacterModel>
 }

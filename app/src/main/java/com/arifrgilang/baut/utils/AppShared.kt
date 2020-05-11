@@ -35,56 +35,56 @@ class AppShared {
         private var dataManager : DataManager? = null
 
         private fun <T> getServiceInstance(url : String, serviceClass: Class<T>) : T {
-            val interceptor = HttpLoggingInterceptor { message -> Log.d("http", message) }
-            interceptor.level = HttpLoggingInterceptor.Level.BODY
-            val okHttpClient = OkHttpClient.Builder()
-                .writeTimeout(25, TimeUnit.SECONDS)
-                .readTimeout(25, TimeUnit.SECONDS)
-                .connectTimeout(25, TimeUnit.SECONDS)
-                .addInterceptor(interceptor)
-                .addInterceptor { chain ->
-                    val request = chain.request()
-                    try {
-                        return@addInterceptor chain.proceed(request)
-                    } catch (e: Exception) {
-                        return@addInterceptor Response.Builder()
-                            .request(request)
-                            .code(408)
-                            .protocol(Protocol.HTTP_1_1)
-                            .message("{\"status\":\"fail\",\"description\":\"Please check your connection\"}")
-                            .body(
-                                ResponseBody.create(
-                                    "application/json".toMediaTypeOrNull(),
-                                    "{\"status\":\"fail\",\"description\":\"Please check your connection\"}"
-                                )
-                            )
-                            .build()
-                    }
-                }
-                .addNetworkInterceptor { chain ->
-                    val request = chain.request()
-
-                    val newRequest = request.newBuilder()
-                        .addHeader("Cache-Control", "no-cache")
-                        .addHeader("Cache-Control", "no-store")
-                        .build()
-                    try {
-                        return@addNetworkInterceptor chain.proceed(newRequest)
-                    } catch (e: SocketException) {
-                        e.printStackTrace()
-                        return@addNetworkInterceptor chain.proceed(chain.request())
-                    }
-                }.build()
-
-            val gson = GsonBuilder()
-                .excludeFieldsWithModifiers(Modifier.FINAL, Modifier.TRANSIENT, Modifier.STATIC)
-                .serializeNulls()
-                .setLenient()
-                .create()
+//            val interceptor = HttpLoggingInterceptor { message -> Log.d("http", message) }
+//            interceptor.level = HttpLoggingInterceptor.Level.BODY
+//            val okHttpClient = OkHttpClient.Builder()
+//                .writeTimeout(25, TimeUnit.SECONDS)
+//                .readTimeout(25, TimeUnit.SECONDS)
+//                .connectTimeout(25, TimeUnit.SECONDS)
+//                .addInterceptor(interceptor)
+//                .addInterceptor { chain ->
+//                    val request = chain.request()
+//                    try {
+//                        return@addInterceptor chain.proceed(request)
+//                    } catch (e: Exception) {
+//                        return@addInterceptor Response.Builder()
+//                            .request(request)
+//                            .code(408)
+//                            .protocol(Protocol.HTTP_1_1)
+//                            .message("{\"status\":\"fail\",\"description\":\"Please check your connection\"}")
+//                            .body(
+//                                ResponseBody.create(
+//                                    "application/json".toMediaTypeOrNull(),
+//                                    "{\"status\":\"fail\",\"description\":\"Please check your connection\"}"
+//                                )
+//                            )
+//                            .build()
+//                    }
+//                }
+//                .addNetworkInterceptor { chain ->
+//                    val request = chain.request()
+//
+//                    val newRequest = request.newBuilder()
+//                        .addHeader("Cache-Control", "no-cache")
+//                        .addHeader("Cache-Control", "no-store")
+//                        .build()
+//                    try {
+//                        return@addNetworkInterceptor chain.proceed(newRequest)
+//                    } catch (e: SocketException) {
+//                        e.printStackTrace()
+//                        return@addNetworkInterceptor chain.proceed(chain.request())
+//                    }
+//                }.build()
+//
+//            val gson = GsonBuilder()
+//                .excludeFieldsWithModifiers(Modifier.FINAL, Modifier.TRANSIENT, Modifier.STATIC)
+//                .serializeNulls()
+//                .setLenient()
+//                .create()
             val retrofit = Retrofit.Builder()
-                .client(okHttpClient)
+//                .client(okHttpClient)
                 .baseUrl(url)
-                .addConverterFactory(GsonConverterFactory.create(gson))
+                .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
 
